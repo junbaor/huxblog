@@ -106,6 +106,7 @@ public class MainService {
     public List<Article> getArticleAll() {
         ArticleExample example = new ArticleExample();
         example.createCriteria().andTagNotEqualTo(Long.valueOf(1));
+        example.setOrderByClause("create_date desc");
         return articleMapper.selectByExample(example);
     }
 }

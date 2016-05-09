@@ -28,6 +28,11 @@
     <result column="bm" property="bm" jdbcType="VARCHAR" />
     <result column="tag_name" property="tagName" jdbcType="VARCHAR" />
   </resultMap>
+
+  <select id="selectByTagBm" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT  <include refid="Base_Column_List" />
+    FROM huxblog_article WHERE bm IN (SELECT article_bm FROM huxblog_article_tag WHERE tag_bm = #{bm} )
+  </select>
   <sql id="Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated

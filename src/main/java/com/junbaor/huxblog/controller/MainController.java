@@ -1,6 +1,7 @@
 package com.junbaor.huxblog.controller;
 
 import com.junbaor.huxblog.common.AppUtils;
+import com.junbaor.huxblog.common.CacheManager;
 import com.junbaor.huxblog.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,12 +26,14 @@ public class MainController {
 
     @RequestMapping("/about")
     public String about(Model model) {
-        model.addAttribute("info",mainService.getInfo());
+        model.addAttribute("info", mainService.getInfo());
         return "about";
     }
 
     @RequestMapping("/tags")
-    public String tags() {
+    public String tags(Model model)
+    {
+        model.addAttribute("tagList", CacheManager.get(CacheManager.CACHE_TAG));
         return "tags";
     }
 

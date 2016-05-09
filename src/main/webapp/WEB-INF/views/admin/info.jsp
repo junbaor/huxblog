@@ -39,6 +39,8 @@
                 <li>
                     <a class="padding-right-lg waves-attach" href="<%=path%>/admin/info"><span
                             class="icon icon-lg margin-right">account_box</span>修改个人简介</a>
+                    <a class="padding-right-lg waves-attach waves-effect" href="<%=path%>/admin/logout"><span
+                            class="icon icon-lg margin-right">exit_to_app</span>安全退出</a>
                 </li>
             </ul>
         </li>

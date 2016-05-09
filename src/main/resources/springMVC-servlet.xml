@@ -45,4 +45,13 @@
 
     <context:property-placeholder location="classpath:config.properties"/>
     <mvc:default-servlet-handler/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin"/>
+            <mvc:mapping path="/admin/**"/>
+            <mvc:exclude-mapping path="/admin/login"/>
+            <bean class="com.junbaor.huxblog.common.AdminValidationInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

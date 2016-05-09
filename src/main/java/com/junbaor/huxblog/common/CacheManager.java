@@ -17,21 +17,21 @@ public class CacheManager {
     public static final String CACHE_TAG = "cache_tag";
     public static final String CACHE_ARTICLE = "cache_article";
 
-    private ConcurrentHashMap<String, Object> cache = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, Object> cache = new ConcurrentHashMap<>();
 
-    public void add(String key, Object value) {
+    public static void add(String key, Object value) {
         cache.put(key, value);
     }
 
-    public Object get(String key) {
+    public static Object get(String key) {
         return cache.get(key);
     }
 
-    public void clear() {
+    public static void clear() {
         cache.clear();
     }
 
-    public void remove(String key) {
+    public static void remove(String key) {
         cache.remove(key);
     }
 

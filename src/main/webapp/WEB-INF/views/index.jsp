@@ -159,7 +159,6 @@
 <div class="container">
     <div class="row">
 
-
         <!-- USE SIDEBAR -->
         <!-- PostList Container -->
         <div class="col-lg-8 col-lg-offset-1
@@ -190,15 +189,11 @@
             </c:forEach>
             <!-- Pager -->
 
-            <ul class="pager">
-
-
+            <%--<ul class="pager">
                 <li class="next">
                     <a href="<%=path%>">Older Posts &rarr;</a>
                 </li>
-
-            </ul>
-
+            </ul>--%>
 
         </div>
         <!-- Sidebar Container -->
@@ -216,7 +211,7 @@
                 <h5><a href="<%=path%>/tags/">FEATURED TAGS</a></h5>
                 <div class="tags">
                     <c:forEach items="${cache_tag}" var="item" varStatus="status" end="10">
-                        <a href="javascript:void(0);" title="${item.tagName}" rel="${status.index+1}">
+                        <a href="<%=path%>/tags/#${item.tagName}" title="${item.tagName}" rel="${status.index+1}">
                                 ${item.tagName}
                         </a>
                     </c:forEach>
@@ -235,7 +230,7 @@
                     <p>${meDescrption}</p>
 
                     <!-- SNS Link -->
-                    <ul class="list-inline">
+                    <%--<ul class="list-inline">
                         <c:if test="${zhihu != ''}">
                             <li>
                                 <a target="_blank" href="https://www.zhihu.com/people/${zhihu}">
@@ -266,34 +261,17 @@
                                 </a>
                             </li>
                         </c:if>
-                    </ul>
+                    </ul>--%>
                 </div>
             </section>
             <!-- Friends Blog -->
-
-            <hr>
-            <h5>FRIENDS</h5>
-            <ul class="list-inline">
-
-                <li><a href="http://qianduan.guru/">前端外刊评论</a></li>
-
-                <li><a href="http://lingyu.wang/">天镶的博客</a></li>
-
-                <li><a href="http://hmqk1995.github.io">Luke的自留地</a></li>
-
-                <li><a href="http://ebnbin.com/">Ebn's Blog</a></li>
-
-                <li><a href="http://blog.smdcn.net">SmdCn's Blog</a></li>
-
-                <li><a href="http://xieminis.me/">解旻的博客</a></li>
-
-                <li><a href="http://dhong.co">DHong Say</a></li>
-
-                <li><a href="http://ingf.github.io/">尹峰以为</a></li>
-
-                <li><a href="http://wepiaofei.github.io/blog/">前端神盾局</a></li>
-
-            </ul>
+            <%--
+               <hr>
+               <h5>FRIENDS</h5>
+               <ul class="list-inline">
+                   <li><a href="http://qianduan.guru/">前端外刊评论</a></li>
+               </ul>
+            --%>
 
         </div>
 

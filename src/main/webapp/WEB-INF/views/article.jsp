@@ -148,12 +148,8 @@
 <style type="text/css">
     header.intro-header {
         position: relative;
-        /*background-image: url('
-
-
-
-    <c:url value="/static/img/home-bg.jpg"/>    ')*/
-        background-color: #00c853;
+        /*background-image: url('<c:url value="/static/img/home-bg.jpg"/>')*/
+        background-color: ${article.theme};
     }
 
     header.intro-header .header-mask {
@@ -171,16 +167,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     <div class="tags">
-
-                        <%--  <a class="tag" href="/tags/#前端开发" title="前端开发">前端开发</a>
-
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-
-                          <a class="tag" href="/tags/#译文" title="译文">译文</a>--%>
-                        <c:forEach items="${article.tagList}" var="item">
-                            <a class="tag" href="javascript:void(0);" title="${item.tagName}">${item.tagName}</a>
+                        <c:forEach items="${article.tagList}" var="tag">
+                            <a class="tag" href="<%=path%>/tags/#${tag.tagName}"
+                               title="${tag.tagName}">${tag.tagName}</a>
                         </c:forEach>
-
                     </div>
                     <h1>${article.title}</h1>
 

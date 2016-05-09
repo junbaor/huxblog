@@ -39,6 +39,8 @@
                 <li>
                     <a class="padding-right-lg waves-attach" href="<%=path%>/admin/info"><span
                             class="icon icon-lg margin-right">account_box</span>修改个人简介</a>
+                    <a class="padding-right-lg waves-attach waves-effect" href="<%=path%>/admin/logout"><span
+                            class="icon icon-lg margin-right">exit_to_app</span>安全退出</a>
                 </li>
             </ul>
         </li>
@@ -79,13 +81,16 @@
                                     <input class="form-control" id="titleSub" type="text">
                                 </div>
                                 <div class="form-group form-group-label">
+                                    <label class="floating-label" for="theme">头部主题色(RGB或16进制)</label>
+                                    <input id="theme" class="form-control" type="text">
+                                </div>
+                                <div class="form-group form-group-label">
                                     <label class="floating-label" for="tags">标签</label>
                                     <input id="tagName" class="form-control" type="text"
-                                           style="display: inline;width: 80%">
+                                           style="display: inline;width:80%">
                                     <a class="btn pull-right waves-attach" onclick="addTag()">添加标签</a>
                                 </div>
                             </div>
-
                             <div class="card-action">
                                 <div class="card-action-btn pull-left">
                                     <a class="btn btn-flat btn-brand waves-attach waves-effect"
@@ -102,7 +107,7 @@
 </main>
 <footer class="ui-footer">
     <div class="container">
-        <p> &copy;  ${blogTitle} 2016</p>
+        <p> &copy; ${blogTitle} 2016</p>
     </div>
 </footer>
 <%--<div class="fbtn-container">
@@ -132,6 +137,7 @@
     function submit() {
         var title = $("#title").val();
         var titleSub = $("#titleSub").val();
+        var theme = $("#theme").val();
         var content = editor.$txt.html();
         if (content == "<p><br></p>" || title == "") {
             return false;
@@ -147,7 +153,8 @@
                 'title': title,
                 'titleSub': titleSub,
                 'content': content,
-                'tags': tags
+                'tags': tags,
+                'theme':theme
             },
             success: function (data) {
                 if (data > 0) {
