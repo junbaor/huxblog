@@ -5,7 +5,7 @@
 主题是从 [黄玄](http://huangxuan.me/) 博客扒取的,是国人很喜欢的一套 `jekyll` 主题
 
 ### 相关技术
-* Spinrg
+* Sping
 * Spring MVC
 * MyBatis
 * My SQL
